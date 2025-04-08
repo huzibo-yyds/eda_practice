@@ -1,0 +1,896 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+  **** SW Build 5238294 on Nov  8 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Apr  7 16:21:50 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /usr/xilinx/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'huzibo' on host 'beiyou-SYS-420GP-TNR' (Linux_x86_64 version 6.8.0-52-generic) on Mon Apr 07 16:21:52 CST 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_'
+WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset sync_prj 
+INFO: [HLS 200-10] Opening and resetting project '/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj'.
+INFO: [HLS 200-1510] Running: set_top sync_circuit 
+INFO: [HLS 200-1510] Running: add_files sync_circuit.cpp 
+INFO: [HLS 200-10] Adding design file 'sync_circuit.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Starting Csim...
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../tb.cpp in debug mode
+   Compiling ../../../../sync_circuit.cpp in debug mode
+   Generating csim.exe
+==== Test Case 1: Phase Shift=0 ====
+Status: Fail
+
+==== Test Case 2: Phase Shift=5 ====
+Status: Success
+
+==== Test Summary ====
+Errors: 0
+WARNING [HLS SIM]: hls::stream 'hls::stream<hls::axis<ap_int<32>, 1ul, 1ul, 1ul, (unsigned char)56, false>, 0>0' contains leftover data, which may result in RTL simulation hanging.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 15376
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:05; Allocated memory: 0.180 MB.
+Starting Csynth...
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 641.176 MB.
+INFO: [HLS 200-10] Analyzing design file 'sync_circuit.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.14 seconds. CPU system time: 0.66 seconds. Elapsed time: 3.82 seconds; current allocated memory: 643.297 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 19,608 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,632 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,027 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 986 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 684 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 770 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 660 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 660 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 660 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 681 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 647 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 638 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 650 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 604 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 588 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 604 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'void range_redux_payne_hanek_hotbm<29, float, 29, 29>(float, ap_uint<3>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<float>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'void range_redux_payne_hanek_hotbm<29, float, 29, 29>(float, ap_uint<3>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<float>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'ap_uint<(((2) * ((23) + (1))) + (29)) + (3)> table_lookup_4oPi_hotbm<23, 29>(int, float)' into 'void range_redux_payne_hanek_hotbm<29, float, 29, 29>(float, ap_uint<3>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<float>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'unsigned int clz<29, 58, 0>(ap_ufixed<58, 0, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void range_redux_payne_hanek_hotbm<29, float, 29, 29>(float, ap_uint<3>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<float>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::data() const (.47.56.67.76)' into 'fp_struct<float>::to_float() const (.44.53.64.73)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:322:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_float() const (.44.53.64.73)' into 'fp_struct<float>::to_ieee() const' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:346:0)
+INFO: [HLS 214-178] Inlining function 'clz(int) (.26146)' into 'void scaled_fixed2ieee<29, 1>(ap_ufixed<29, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, float&, int)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:257:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::set_mantissa(ap_ufixed<24, 1, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void scaled_fixed2ieee<29, 1>(ap_ufixed<29, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, float&, int)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:257:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'void scaled_fixed2ieee<29, 1>(ap_ufixed<29, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, float&, int)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:257:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float hotbm_::sin_or_cos<float>(float, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'void range_redux_payne_hanek_hotbm<29, float, 29, 29>(float, ap_uint<3>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<float>::EXP_BITS>&)' into 'float hotbm_::sin_or_cos<float>(float, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'ap_ufixed<29, 1, (ap_q_mode)5, (ap_o_mode)3, 0> hotbm_::value_list<float>::sin_or_cos_approximation<29, 29>(bool, ap_uint<3>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<29, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<8>&)' into 'float hotbm_::sin_or_cos<float>(float, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'void scaled_fixed2ieee<29, 1>(ap_ufixed<29, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, float&, int)' into 'float hotbm_::sin_or_cos<float>(float, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float hotbm_::sin_or_cos<float>(float, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::cos(float)' into 'cosf' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/c/sincosfloat.cpp:11:0)
+INFO: [HLS 214-178] Inlining function 'cosf' into 'std::cos(float)' (/usr/xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:185:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::sin(float)' into 'sinf' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/c/sincosfloat.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'sinf' into 'std::sin(float)' (/usr/xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:426:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10value_listIfE24sin_or_cos_approximationILi29ELi29EEE9ap_ufixedIXT_ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbR7ap_uintILi3EERS3_IXT_ELi0ELS4_5ELS5_3ELi0EERS3_IXT0_ELi0ELS4_5ELS5_3ELi0EER6ap_intILi8EEE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_float.cpp:14:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE13neg_cos_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:217:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE13neg_sin_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:216:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:215:0)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:242:30)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_float.cpp:25:67)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:267:8)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:289:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:282:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:268:41 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_25_1> at sync_circuit.cpp:25:22 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_83_4> at sync_circuit.cpp:83:30 
+INFO: [HLS 214-421] Automatically partitioning small array 'out_bits' completely based on array size. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:268:17)
+INFO: [HLS 214-421] Automatically partitioning small array 'c' completely based on array size. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:281:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'out_bits.i' due to pipeline pragma (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:268:17)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'c.i' due to pipeline pragma (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:281:9)
+INFO: [HLS 214-248] Applying array_partition to 'out_bits.i': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:268:17)
+INFO: [HLS 214-248] Applying array_partition to 'c.i': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:281:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.14 seconds. CPU system time: 0.86 seconds. Elapsed time: 8.97 seconds; current allocated memory: 654.133 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 654.133 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 656.938 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 660.480 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (sync_circuit.cpp:41:18) to (sync_circuit.cpp:69:13) in function 'sync_circuit'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:209:18) to (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:282:5) in function 'hotbm_::sin_or_cos<float>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:252:40) to (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:287:5) in function 'hotbm_::sin_or_cos<float>'... converting 9 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 685.125 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 726.133 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sync_circuit' ...
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<float>_Pipeline_1' to 'sin_or_cos_float_Pipeline_1'.
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<float>_Pipeline_2' to 'sin_or_cos_float_Pipeline_2'.
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<float>' to 'sin_or_cos_float_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sync_circuit_Pipeline_VITIS_LOOP_25_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.09 seconds; current allocated memory: 727.078 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 727.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_float_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'sin_or_cos<float>_Pipeline_1': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 727.086 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 727.086 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_float_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'sin_or_cos<float>_Pipeline_2': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 727.094 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 727.094 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for function 'sin_or_cos<float>': contains subfunction 'sin_or_cos<float>_Pipeline_1' which is not pipelined.
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for function 'sin_or_cos<float>': contains subfunction 'sin_or_cos<float>_Pipeline_1' which is not pipelined.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 727.188 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 727.188 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sync_circuit_Pipeline_VITIS_LOOP_83_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_83_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_83_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 727.594 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 727.594 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sync_circuit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 728.320 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 728.320 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sync_circuit_Pipeline_VITIS_LOOP_25_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sync_circuit_Pipeline_VITIS_LOOP_25_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 728.320 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_float_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'ctlz_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_float_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 729.066 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_float_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'sin_or_cos_float_Pipeline_2' pipeline 'Loop 1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_float_Pipeline_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 729.949 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'ctlz_30_30_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_15ns_15ns_30_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_15ns_15s_30_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_23s_22ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_30s_29ns_58_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_80s_24ns_80_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_1_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_float_s'.
+INFO: [RTMG 210-279] Implementing memory 'sync_circuit_sin_or_cos_float_s_ref_4oPi_table_100_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K0_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K1_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K2_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 732.223 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sync_circuit_Pipeline_VITIS_LOOP_83_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'sync_circuit_Pipeline_VITIS_LOOP_83_4' pipeline 'VITIS_LOOP_83_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sync_circuit_Pipeline_VITIS_LOOP_83_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 735.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sync_circuit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_in_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_in_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_in_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_in_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_in_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_out_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_out_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'sync_circuit/if_out_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'sync_circuit' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_3_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_3_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_1_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptrunc_64ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_32ns_64_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_29ns_6ns_5_33_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sync_circuit'.
+INFO: [RTMG 210-278] Implementing memory 'sync_circuit_local_code_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 737.164 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.24 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.27 seconds; current allocated memory: 741.520 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.33 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.35 seconds; current allocated memory: 745.781 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sync_circuit.
+INFO: [VLOG 209-307] Generating Verilog RTL for sync_circuit.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 141.08 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:14; Allocated memory: 105.305 MB.
+Starting Cosim...
+INFO: [HLS 200-1510] Running: cosim_design 
+WARNING: [COSIM 212-382] This design has top-level non-blocking FIFO/Stream accesses with ap_ctrl_none control interface, which may result in mismatches or simulation hanging.
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/usr/xilinx/Vitis/2024.2/vcxx/libexec//clang++"
+   Compiling apatb_sync_circuit.cpp
+   Compiling apatb_sync_circuit_util.cpp
+   Compiling sync_circuit.cpp_pre.cpp.tb.cpp
+   Compiling tb.cpp_pre.cpp.tb.cpp
+   Compiling apatb_sync_circuit_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+==== Test Case 1: Phase Shift=0 ====
+Status: Fail
+
+==== Test Case 2: Phase Shift=5 ====
+Status: Success
+
+==== Test Summary ====
+Errors: 0
+WARNING [HLS SIM]: hls::stream 'hls::stream<hls::axis<ap_int<32>, 1ul, 1ul, 1ul, (unsigned char)56, false>, 0>0' contains leftover data, which may result in RTL simulation hanging.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 15376
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+WARNING: /usr/xilinx/Vivado/2024.2/tps/lnx64/jre11.0.16_1 does not exist.
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Apr  7 16:22:36 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_vivado_gen_ip.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1486.691 ; gain = 18.836 ; free physical = 7569 ; free virtual = 351760
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/xilinx/Vivado/2024.2/data/ip'.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_fmul_32ns_32ns_32_2_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_fmul_32ns_32ns_32_2_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_dmul_64ns_64ns_64_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_dmul_64ns_64ns_64_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_fpext_32ns_64_1_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_fpext_32ns_64_1_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_sitofp_32s_32_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_sitofp_32s_32_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_sitodp_32ns_64_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_sitodp_32ns_64_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_dadd_64ns_64ns_64_3_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_dadd_64ns_64ns_64_3_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_fptrunc_64ns_32_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_fptrunc_64ns_32_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_fcmp_32ns_32ns_1_1_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_fcmp_32ns_32ns_1_1_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'sync_circuit_fadd_32ns_32ns_32_3_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'sync_circuit_fadd_32ns_32ns_32_3_full_dsp_1_ip'...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  7 16:22:51 2025...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /usr/xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_sync_circuit_top glbl -Oenable_linking_all_libraries -prj sync_circuit.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_24 -L floating_point_v7_1_19 --lib ieee_proposed=./ieee_proposed -s sync_circuit 
+Multi-threading is on. Using 126 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_fmul_32ns_32ns_32_2_max_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fmul_32ns_32ns_32_2_max_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_dmul_64ns_64ns_64_4_max_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_dmul_64ns_64ns_64_4_max_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_fpext_32ns_64_1_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fpext_32ns_64_1_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_sitofp_32s_32_2_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sitofp_32s_32_2_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_sitodp_32ns_64_2_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sitodp_32ns_64_2_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_dadd_64ns_64ns_64_3_full_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_dadd_64ns_64ns_64_3_full_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_fptrunc_64ns_32_2_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fptrunc_64ns_32_2_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_fcmp_32ns_32ns_1_1_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fcmp_32ns_32ns_1_1_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/ip/xil_defaultlib/sync_circuit_fadd_32ns_32ns_32_3_full_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fadd_32ns_32ns_32_3_full_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_sync_circuit_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_srem_29ns_6ns_5_33_seq_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_srem_29ns_6ns_5_33_seq_1_divseq
+INFO: [VRFC 10-311] analyzing module sync_circuit_srem_29ns_6ns_5_33_seq_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_fptrunc_64ns_32_2_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fptrunc_64ns_32_2_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sin_or_cos_float_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sin_or_cos_float_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sin_or_cos_float_s_ref_4oPi_table_100_ROM_1P_LUTRAM_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sin_or_cos_float_s_ref_4oPi_table_100_ROM_1P_LUTRAM_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sparsemux_17_3_1_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sparsemux_17_3_1_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/AESL_axi_s_if_in.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_if_in
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_fpext_32ns_64_1_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fpext_32ns_64_1_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sync_circuit_Pipeline_VITIS_LOOP_25_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sync_circuit_Pipeline_VITIS_LOOP_25_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_regslice_both
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/AESL_axi_s_if_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_if_out
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_mul_80s_24ns_80_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_mul_80s_24ns_80_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sparsemux_33_4_1_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sparsemux_33_4_1_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sparsemux_9_3_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sparsemux_9_3_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_fmul_32ns_32ns_32_2_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fmul_32ns_32ns_32_2_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_local_code_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_local_code_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sin_or_cos_float_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sin_or_cos_float_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_mul_23s_22ns_45_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_mul_23s_22ns_45_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K0_ROM_1P_LUTRAM_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K0_ROM_1P_LUTRAM_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K1_ROM_1P_LUTRAM_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K1_ROM_1P_LUTRAM_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_mul_30s_29ns_58_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_mul_30s_29ns_58_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_fadd_32ns_32ns_32_3_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fadd_32ns_32ns_32_3_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sin_or_cos_float_Pipeline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sin_or_cos_float_Pipeline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_mul_15ns_15ns_30_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_mul_15ns_15ns_30_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_mul_15ns_15s_30_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_mul_15ns_15s_30_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_dmul_64ns_64ns_64_4_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_dmul_64ns_64ns_64_4_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K2_ROM_1P_LUTRAM_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sin_or_cos_float_s_second_order_float_sin_cos_K2_ROM_1P_LUTRAM_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sync_circuit_Pipeline_VITIS_LOOP_83_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sync_circuit_Pipeline_VITIS_LOOP_83_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_ctlz_32_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_ctlz_32_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sitofp_32s_32_2_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sitofp_32s_32_2_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_fcmp_32ns_32ns_1_1_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_fcmp_32ns_32ns_1_1_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_ctlz_30_30_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_ctlz_30_30_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_sitodp_32ns_64_2_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_sitodp_32ns_64_2_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_dadd_64ns_64ns_64_3_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_circuit_dadd_64ns_64ns_64_3_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-9543] actual bit length 65 differs from formal bit length 64 for port 'm_axis_result_tdata' [/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit_fpext_32ns_64_1_no_dsp_1.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_viv_comp
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_14.xbip_utils_v3_0_14_pkg
+Compiling package axi_utils_v2_0_10.axi_utils_v2_0_10_pkg
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_exp_table...
+Compiling package mult_gen_v12_0_22.mult_gen_v12_0_22_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_1_19.floating_point_v7_1_19_pkg
+Compiling package floating_point_v7_1_19.flt_utils
+Compiling package xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv_comp
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package floating_point_v7_1_19.vt2mutils
+Compiling package floating_point_v7_1_19.vt2mcomps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.sync_circuit_local_code_RAM_AUTO...
+Compiling module xil_defaultlib.sync_circuit_flow_control_loop_p...
+Compiling module xil_defaultlib.sync_circuit_sync_circuit_Pipeli...
+Compiling module xil_defaultlib.sync_circuit_sin_or_cos_float_s_...
+Compiling module xil_defaultlib.sync_circuit_sin_or_cos_float_s_...
+Compiling module xil_defaultlib.sync_circuit_sin_or_cos_float_s_...
+Compiling module xil_defaultlib.sync_circuit_sin_or_cos_float_s_...
+Compiling module xil_defaultlib.sync_circuit_ctlz_32_32_1_1(din_...
+Compiling module xil_defaultlib.sync_circuit_sin_or_cos_float_Pi...
+Compiling module xil_defaultlib.sync_circuit_sin_or_cos_float_Pi...
+Compiling module xil_defaultlib.sync_circuit_mul_23s_22ns_45_1_1...
+Compiling module xil_defaultlib.sync_circuit_mul_30s_29ns_58_1_1...
+Compiling module xil_defaultlib.sync_circuit_mul_80s_24ns_80_1_1...
+Compiling module xil_defaultlib.sync_circuit_ctlz_30_30_1_1(din_...
+Compiling module xil_defaultlib.sync_circuit_sparsemux_17_3_1_1_...
+Compiling module xil_defaultlib.sync_circuit_mul_15ns_15ns_30_1_...
+Compiling module xil_defaultlib.sync_circuit_sparsemux_33_4_1_1_...
+Compiling module xil_defaultlib.sync_circuit_mul_15ns_15s_30_1_1...
+Compiling module xil_defaultlib.sync_circuit_sin_or_cos_float_s
+Compiling module xil_defaultlib.sync_circuit_sync_circuit_Pipeli...
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=7,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=24,length=0,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=16,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=48,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=24,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xcvu9p-...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=13,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_19.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=5,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=3,length=0)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=2,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=25,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=9,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=10,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_gt [\compare_gt(c_xdevicefamily="vir...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare [\compare(c_xdevicefamily="virtex...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=8)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=12,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=23)\]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_add [\flt_add(c_xdevicefamily="virtex...]
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=32,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_fadd_32ns_32ns_32_3...
+Compiling module xil_defaultlib.sync_circuit_fadd_32ns_32ns_32_3...
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=17,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_19.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.fix_mult [\fix_mult(c_xdevicefamily="virte...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="v...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=18,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_19.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_mult [\flt_mult(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_fmul_32ns_32ns_32_2...
+Compiling module xil_defaultlib.sync_circuit_fmul_32ns_32ns_32_2...
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.norm_zero_det [\norm_zero_det(data_width=7,norm...]
+Compiling architecture rtl of entity floating_point_v7_1_19.mux4 [\mux4(c_xdevicefamily="virtexupl...]
+Compiling architecture rtl of entity floating_point_v7_1_19.mux4 [\mux4(c_xdevicefamily="virtexupl...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture rtl of entity floating_point_v7_1_19.shift_msb_first [\shift_msb_first(a_width=32,resu...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity floating_point_v7_1_19.fix_to_flt_conv_exp [\fix_to_flt_conv_exp(c_xdevicefa...]
+Compiling architecture struct of entity floating_point_v7_1_19.fix_to_flt_conv [\fix_to_flt_conv(c_xdevicefamily...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_sitofp_32s_32_2_no_...
+Compiling module xil_defaultlib.sync_circuit_sitofp_32s_32_2_no_...
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=12,length=0,fast_in...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=25,length=0,fast_in...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="ki...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(a_w=64,a_fw=53,o...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_to_flt_conv_exp [\flt_to_flt_conv_exp(a_w=64,a_ew...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_to_flt_conv [\flt_to_flt_conv(c_xdevicefamily...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_fptrunc_64ns_32_2_n...
+Compiling module xil_defaultlib.sync_circuit_fptrunc_64ns_32_2_n...
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=23,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="ki...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(a_fw=24,op_delay...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_to_flt_conv_exp [\flt_to_flt_conv_exp(r_w=64,r_ew...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_to_flt_conv [\flt_to_flt_conv(c_xdevicefamily...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=64,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_fpext_32ns_64_1_no_...
+Compiling module xil_defaultlib.sync_circuit_fpext_32ns_64_1_no_...
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=11,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq [\compare_eq(c_xdevicefamily="vir...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_gt [\compare_gt(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_19.fp_cmp [\fp_cmp(c_xdevicefamily="virtexu...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_fcmp_32ns_32ns_1_1_...
+Compiling module xil_defaultlib.sync_circuit_fcmp_32ns_32ns_1_1_...
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=52)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=54,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=11,length=0,fast_in...]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture muxf8_v of entity unisim.MUXF8 [muxf8_default]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.zero_det_sel [\zero_det_sel(c_xdevicefamily="v...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=55,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.shift_msb_first [\shift_msb_first(a_width=54,regi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.alignment [\alignment(c_xdevicefamily="virt...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=47,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=56,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_19.addsub_dsp [\addsub_dsp(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_19.addsub [\addsub(c_xdevicefamily="virtexu...]
+Compiling architecture rtl of entity floating_point_v7_1_19.align_add [\align_add(c_xdevicefamily="virt...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=6,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.mux4 [\mux4(c_xdevicefamily="virtexupl...]
+Compiling architecture rtl of entity floating_point_v7_1_19.mux4 [\mux4(c_xdevicefamily="virtexupl...]
+Compiling architecture rtl of entity floating_point_v7_1_19.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture rtl of entity floating_point_v7_1_19.shift_msb_first [\shift_msb_first(a_width=56,resu...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e1_wrapper [\dsp48e1_wrapper(b_width=18,c_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=19,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=28,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=29,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_19.norm_and_round_logic [\norm_and_round_logic(c_xdevicef...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq [\compare_eq(c_xdevicefamily="vir...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare [\compare(c_xdevicefamily="virtex...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=11)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=12)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_add_exp [\flt_add_exp(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_add_logic [\flt_add_logic(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_add [\flt_add(c_xdevicefamily="virtex...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_dadd_64ns_64ns_64_3...
+Compiling module xil_defaultlib.sync_circuit_dadd_64ns_64ns_64_3...
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e2_wrapper [\dsp48e2_wrapper(a_width=30,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=45,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=26,length=0)\]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e2_wrapper [\dsp48e2_wrapper(a_width=26,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=34,length=0)\]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e2_wrapper [\dsp48e2_wrapper(a_width=26,b_wi...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e2_wrapper [\dsp48e2_wrapper(a_width=26,b_wi...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e2_wrapper [\dsp48e2_wrapper(a_width=26,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=38,length=0)\]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e2_wrapper [\dsp48e2_wrapper(a_width=26,b_wi...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(adreg=0,alumodereg=0,a_...]
+Compiling architecture rtl of entity floating_point_v7_1_19.dsp48e2_wrapper [\dsp48e2_wrapper(a_width=26,b_wi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=17)\]
+Compiling architecture struct of entity floating_point_v7_1_19.fix_mult_dsp48e2_dbl [\fix_mult_dsp48e2_dbl(mult_usage...]
+Compiling architecture rtl of entity floating_point_v7_1_19.fix_mult [\fix_mult(c_xdevicefamily="virte...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_19.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_19.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=2,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="v...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.delay [\delay(width=54,length=0,fast_in...]
+Compiling architecture rtl of entity floating_point_v7_1_19.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_19.flt_mult [\flt_mult(c_xdevicefamily="virte...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_dmul_64ns_64ns_64_4...
+Compiling module xil_defaultlib.sync_circuit_dmul_64ns_64ns_64_4...
+Compiling architecture rtl of entity floating_point_v7_1_19.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture rtl of entity floating_point_v7_1_19.shift_msb_first [\shift_msb_first(a_width=32,dist...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_19.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_19.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity floating_point_v7_1_19.fix_to_flt_conv_exp [\fix_to_flt_conv_exp(c_xdevicefa...]
+Compiling architecture synth of entity floating_point_v7_1_19.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture struct of entity floating_point_v7_1_19.fix_to_flt_conv [\fix_to_flt_conv(c_xdevicefamily...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19_viv [\floating_point_v7_1_19_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_19.floating_point_v7_1_19 [\floating_point_v7_1_19(c_xdevic...]
+Compiling module xil_defaultlib.sync_circuit_sitodp_32ns_64_2_no...
+Compiling module xil_defaultlib.sync_circuit_sitodp_32ns_64_2_no...
+Compiling module xil_defaultlib.sync_circuit_srem_29ns_6ns_5_33_...
+Compiling module xil_defaultlib.sync_circuit_srem_29ns_6ns_5_33_...
+Compiling module xil_defaultlib.sync_circuit_sparsemux_9_3_32_1_...
+Compiling module xil_defaultlib.sync_circuit_regslice_both(DataW...
+Compiling module xil_defaultlib.sync_circuit_regslice_both(DataW...
+Compiling module xil_defaultlib.sync_circuit_regslice_both(DataW...
+Compiling module xil_defaultlib.sync_circuit
+Compiling module xil_defaultlib.fifo(DEPTH=15376,WIDTH=32)
+Compiling module xil_defaultlib.fifo(DEPTH=15376,WIDTH=4)
+Compiling module xil_defaultlib.fifo(DEPTH=15376,WIDTH=1)
+Compiling module xil_defaultlib.AESL_axi_s_if_in
+Compiling module xil_defaultlib.fifo(DEPTH=2,WIDTH=32)
+Compiling module xil_defaultlib.fifo(DEPTH=2,WIDTH=4)
+Compiling module xil_defaultlib.fifo(DEPTH=2,WIDTH=1)
+Compiling module xil_defaultlib.AESL_axi_s_if_out
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=55)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_sync_circuit_top
+Compiling module work.glbl
+Built simulation snapshot sync_circuit
+
+****** xsim v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Apr  7 16:23:18 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/sync_circuit/xsim_script.tcl
+# xsim {sync_circuit} -autoloadwcfg -tclbatch {sync_circuit.tcl}
+Time resolution is 1 ps
+source sync_circuit.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 2 [n/a] @ "125000"
+// RTL Simulation : 1 / 2 [n/a] @ "7855245000"
+// RTL Simulation : 2 / 2 [n/a] @ "14696525000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 14696585 ns : File "/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1_/sync_prj/solution1/sim/verilog/sync_circuit.autotb.v" Line 304
+run: Time (s): cpu = 00:00:00.09 ; elapsed = 00:05:21 . Memory (MB): peak = 1318.164 ; gain = 0.000 ; free physical = 7687 ; free virtual = 352326
+## quit
+INFO: xsimkernel Simulation Memory Usage: 305960 KB (Peak: 337136 KB), Simulation CPU Usage: 323140 ms
+INFO: [Common 17-206] Exiting xsim at Mon Apr  7 16:28:43 2025...
+INFO: [COSIM 212-316] Starting C post checking ...
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on some port, possible cause: There are uninitialized variables in the design.
+==== Test Case 1: Phase Shift=0 ====
+Status: Fail
+
+==== Test Case 2: Phase Shift=5 ====
+Status: Success
+
+==== Test Summary ====
+Errors: 0
+WARNING [HLS SIM]: hls::stream 'hls::stream<hls::axis<ap_int<32>, 1ul, 1ul, 1ul, (unsigned char)56, false>, 0>0' contains leftover data, which may result in RTL simulation hanging.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 15376
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:06:29; Allocated memory: 10.812 MB.
+INFO: [HLS 200-112] Total CPU user time: 422.1 seconds. Total CPU system time: 8.64 seconds. Total elapsed time: 414.71 seconds; peak allocated memory: 756.906 MB.

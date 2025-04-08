@@ -1,0 +1,94 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+  **** SW Build 5238294 on Nov  8 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Apr  7 16:17:22 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /usr/xilinx/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'huzibo' on host 'beiyou-SYS-420GP-TNR' (Linux_x86_64 version 6.8.0-52-generic) on Mon Apr 07 16:17:24 CST 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1'
+WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset sync_prj 
+INFO: [HLS 200-10] Creating and opening project '/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1/sync_prj'.
+INFO: [HLS 200-1510] Running: set_top synchronization_circuit 
+INFO: [HLS 200-1510] Running: add_files sync_circuit.cpp 
+INFO: [HLS 200-10] Adding design file 'sync_circuit.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/media/4T/home/huzibo/Work/eda_practice/lab1/lab1.1/sync_prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Starting Csim...
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../tb.cpp in debug mode
+   Compiling ../../../../sync_circuit.cpp in debug mode
+   Generating csim.exe
+==== Test Case 1: Phase Shift=0 ====
+Attempt 0, Energy = 72.003
+Attempt 1, Energy = 548.997
+Attempt 2, Energy = 1629.01
+Attempt 3, Energy = 3285.01
+Attempt 4, Energy = 1800.01
+Attempt 5, Energy = 5517.02
+Attempt 6, Energy = 3527.98
+Attempt 7, Energy = 3527.98
+Attempt 8, Energy = 117.002
+Attempt 9, Energy = 3060.02
+Attempt 10, Energy = 765.008
+Attempt 11, Energy = 3284.99
+Attempt 12, Energy = 116.999
+Attempt 13, Energy = 71.9984
+Attempt 14, Energy = 71.9998
+Attempt 15, Energy = 72.004
+Attempt 16, Energy = 10845
+Attempt 17, Energy = 1125.01
+Attempt 18, Energy = 3285.03
+Attempt 19, Energy = 1800.03
+Attempt 20, Energy = 5517.03
+Attempt 21, Energy = 3527.99
+Attempt 22, Energy = 3528.02
+Attempt 23, Energy = 117.003
+Attempt 24, Energy = 3060.01
+Attempt 25, Energy = 765.008
+Attempt 26, Energy = 3285.02
+Attempt 27, Energy = 116.998
+Attempt 28, Energy = 71.9981
+Attempt 29, Energy = 71.997
+Attempt 30, Energy = 71.9985
+Status: Fail
+
+==== Test Summary ====
+Errors: 1
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 15376
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:05; Allocated memory: 0.172 MB.
+Starting Csynth...
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 641.137 MB.
+INFO: [HLS 200-10] Analyzing design file 'sync_circuit.cpp' ... 
+ERROR: [HLS 207-2972] no member named 'cout' in namespace 'std' (sync_circuit.cpp:75:14)
+ERROR: [HLS 207-2972] no member named 'endl' in namespace 'std' (sync_circuit.cpp:75:78)
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:00; Allocated memory: 2.027 MB.
+ 
+    while executing
+"source run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 10.07 seconds. Total CPU system time: 1.48 seconds. Total elapsed time: 11.32 seconds; peak allocated memory: 642.793 MB.
