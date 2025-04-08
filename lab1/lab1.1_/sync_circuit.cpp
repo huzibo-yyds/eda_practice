@@ -3,12 +3,12 @@
 #include <ap_int.h>
 #include <math.h>
 
-#define CODE_LENGTH 31
-#define SAMPLES_PER_CHIP 16
-#define THRESHOLD 50000.0 // 调整后的门限值
-#define TOTAL_SAMPLES 496
-#define SAMPLE_RATE 496000
-#define CARRIER_FREQ 124000
+#define CODE_LENGTH 31      // 伪随机码长度
+#define SAMPLES_PER_CHIP 16 // 每一个码片对应的采样数
+#define THRESHOLD 50000.0   // 门限值
+#define TOTAL_SAMPLES 496   // 采样数 1ms
+#define SAMPLE_RATE 496000  // 采样频率
+#define CARRIER_FREQ 124000 // 载波频率
 #define phi M_PI / 4
 
 void sync_circuit(
@@ -19,7 +19,7 @@ void sync_circuit(
     #pragma HLS INTERFACE axis port=if_out
     #pragma HLS INTERFACE ap_ctrl_none port=return
 
-    // 本地码生成（1/-1）
+    // 本地码生成（1/-1） 伪随机码序列
     int local_code[CODE_LENGTH];
     uint32_t lfsr = 0x1F;
     for (int i=0; i<CODE_LENGTH; i++) {
@@ -34,7 +34,8 @@ void sync_circuit(
 
     for (int attempt=0; attempt<CODE_LENGTH; attempt++) {
         float sum_I = 0, sum_Q = 0, energy = 0;
-
+        
+        // 读输入数据并做正交下变频 + 乘以本地码 + 累加
         for (int i=0; i<TOTAL_SAMPLES; ) {
             if(!if_in.empty()) {
 
@@ -67,9 +68,9 @@ void sync_circuit(
                 sum_Q += Q * local_code[code_idx];
                  
             }
-     }
+        }
         
-        // 计算能量
+        // 计算能量与门限比较
         energy = sum_I * sum_I + sum_Q * sum_Q;
         // std::cout << "Attempt " << attempt <<", Energy = " << energy << std::endl;  
         
@@ -91,3 +92,12 @@ void sync_circuit(
     out_pkt.data = sync_success ? 1 : 0;
     if_out.write(out_pkt);
 }
+
+///
+1、产生本地码
+2、对输入数据进行正交下变频
+3、与本地码乘积做相关累加
+4、判断能量是否超过门限
+5、如未超过 则移位码重新尝试
+6、最终输出同步是否成功
+// ///
